@@ -1,16 +1,100 @@
-# React + Vite
+# TalentLink - Freelance Talent Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TalentLink is a full-stack freelance talent marketplace platform that connects clients with skilled freelancers. Built with React (Vite) for the frontend and Flask for the backend, featuring real-time messaging, project management, and secure authentication.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (Client/Freelancer roles)
+- Project posting and management
+- Proposal submission and management
+- Real-time messaging
+- Project categories and search functionality
+- Responsive design
 
-## React Compiler
+## 🛠️ Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (v16 or higher)
+- Python (3.8 or higher)
+- pip (Python package manager)
+- SQLite (for development)
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/talentlink.git
+cd talentlink
+```
+
+### 2. Backend Setup
+
+1. Create and activate a virtual environment (recommended):
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
+
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+2. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   FLASK_APP=app.py
+   FLASK_ENV=development
+   SECRET_KEY=your-secret-key-here
+   JWT_SECRET_KEY=your-jwt-secret-key
+   DATABASE_URL=sqlite:///talentlink.db
+   ```
+
+
+### 3. Frontend Setup
+
+1. Install Node.js dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### 4. Start the Backend Server
+
+In a new terminal window, with your virtual environment activated:
+
+```bash
+# From the project root directory
+python app.py
+```
+
+## 🌐 Access the Application
+
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:5000
+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## 🙏 Acknowledgments
+
+- Built with React, Vite, and Flask
+- Using Socket.IO for real-time features
+- Icons by Lucide and Phosphor
