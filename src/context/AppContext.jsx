@@ -57,9 +57,15 @@ export function AppProvider({ children }) {
       if (response.data && response.data.access_token) {
         const { access_token, user: userData } = response.data;
         localStorage.setItem('token', access_token);
+        // Store user data in localStorage for immediate access
+        localStorage.setItem('user', JSON.stringify(userData));
         setUser(userData);
         console.log('Registration successful, user:', userData);
-        return { success: true, user: userData };
+        return { 
+          success: true, 
+          user: userData,
+          role: userData.role // Make sure role is included in the response
+        };
       }
       
       console.warn('Unexpected response format:', response);
