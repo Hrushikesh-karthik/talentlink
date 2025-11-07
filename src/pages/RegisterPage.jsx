@@ -14,7 +14,9 @@ function RegisterPage() {
 
   // Redirect if already authenticated
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
+    const user = JSON.parse(localStorage.getItem('user'));
+    const dashboardPath = user?.role === 'client' ? '/client' : '/freelancer';
+    return <Navigate to={dashboardPath} replace />;
   }
 
   const handleSubmit = async (e) => {
@@ -43,7 +45,7 @@ function RegisterPage() {
       
       if (result.success) {
         // Redirect based on role
-        navigate(role === 'client' ? '/client-dashboard' : '/freelancer-dashboard');
+        navigate(role === 'client' ? '/client' : '/freelancer');
       } else {
         setError(result.error || "Registration failed. Please try again.");
       }
